@@ -52,6 +52,7 @@ input{
 .leftinnerdiv {
     float: left;
     width: 25%;
+    
 }
 
 .rightinnerdiv {
@@ -69,6 +70,7 @@ input{
     width: 95%;
     height: 40px;
     margin-top: 8px;
+    
 }
 
 .greenbtn,
@@ -98,7 +100,7 @@ td, a{
            <div class="container">
             <div class="innerdiv">
             <div class="row" style="position:relative;z-index: 0;left: 170px;"><img class="imglogo" src="images/logo.png"> </div>
-            <div class="leftinnerdiv">
+            <div class="leftinnerdiv" style="position:relative;top: -35px;">
                 <br>
                 <Button class="greenbtn" onclick="openpart('myaccount')"> <img class="icons" src="images/icon/profile.png" width="30px" height="30px"/>  My Account</Button>
                 <Button class="greenbtn" onclick="openpart('requestbook')"><img class="icons" src="images/icon/book.png" width="30px" height="30px"/> Request Book</Button>

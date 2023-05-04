@@ -59,6 +59,8 @@ input{
     width: 95%;
     height: 40px;
     margin-top: 8px;
+    position:relative;
+    top:-22px;
 }
 
 .greenbtn,
@@ -151,6 +153,7 @@ td, a{
             font-style: italic;
             font-size: 14px;
         }
+        
 
 
 
@@ -180,7 +183,7 @@ elseif($msg=="fail"){
 
 
 
-        <div class="container">
+        <div class="container" id="dabba">
         <div class="innerdiv">
             <div class="row" style="position:relative;z-index: 0;left: 170px;"><img class="imglogo" src="images/logo.png"> </div>
             <div class="leftinnerdiv">
@@ -189,8 +192,8 @@ elseif($msg=="fail"){
                 <Button class="greenbtn" onclick="openpart('addbook')" ><img class="icons" src="images/icon/book.png" width="30px" height="30px"/>  ADD BOOK</Button>
                 <Button class="greenbtn" onclick="openpart('bookreport')" > <img class="icons" src="images/icon/open-book.png" width="30px" height="30px"/> BOOK REPORT</Button>
                 <Button class="greenbtn" onclick="openpart('bookrequestapprove')"><img class="icons" src="images/icon/interview.png" width="30px" height="30px"/> BOOK REQUESTS</Button>
-                <Button class="greenbtn" onclick="openpart('addperson')"> <img class="icons" src="images/icon/add-user.png" width="30px" height="30px"/> ADD STUDENT</Button>
-                <Button class="greenbtn" onclick="openpart('studentrecord')"> <img class="icons" src="images/icon/monitoring.png" width="30px" height="30px"/> STUDENT REPORT</Button>
+                <Button class="greenbtn" onclick="openpart('addperson')"> <img class="icons" src="images/icon/add-user.png" width="30px" height="30px"/> ADD PERSON</Button>
+                <Button class="greenbtn" onclick="openpart('studentrecord')"> <img class="icons" src="images/icon/monitoring.png" width="30px" height="30px"/> STUDENT RECORD</Button>
                 <Button class="greenbtn"  onclick="openpart('issuebook')"> <img class="icons" src="images/icon/test.png" width="30px" height="30px"/> ISSUE BOOK</Button>
                 <Button class="greenbtn" onclick="openpart('issuebookreport')"> <img class="icons" src="images/icon/checklist.png" width="30px" height="30px"/> ISSUE REPORT</Button>
                 <a href="index.php"><Button class="greenbtn" ><img class="icons" src="images/icon/book.png" width="30px" height="30px"/> LOGOUT</Button></a>
@@ -198,7 +201,7 @@ elseif($msg=="fail"){
 
             <div class="rightinnerdiv">   
             <div id="bookrequestapprove" class="innerright portion" style="display:none">
-            <Button class="greenbtn" >BOOK REQUEST APPROVE</Button>
+            <Button class="greenbtn" style="position:relative; top:0px;" >BOOK REQUEST APPROVE</Button>
 
             <?php
             $u=new data;
@@ -234,22 +237,22 @@ elseif($msg=="fail"){
 
             <div class="rightinnerdiv">   
             <div id="addbook" class="innerright portion" style="<?php  if(!empty($_REQUEST['viewid'])){ echo "display:none";} else {echo ""; }?>">
-            <Button class="greenbtn" >ADD NEW BOOK</Button>
+            <Button class="greenbtn" style="position:relative; top:0px;" >ADD NEW BOOK</Button>
             <br>
             <form action="addbookserver_page.php" method="post" enctype="multipart/form-data">
-            <label>Book Name:</label><input type="text" name="bookname"/>
+            <label>Book Name:</label><input type="text" name="bookname" style="position:relative;left: -21px;"/>
             </br>
-            <label>Detail:</label><input  type="text" name="bookdetail"/></br>
-            <label>Autor:</label><input type="text" name="bookaudor"/></br>
-            <label>Publication</label><input type="text" name="bookpub"/></br>
+            <label style="position:relative; left:20px;">Detail:</label><input  type="text" name="bookdetail"/></br>
+            <label style="position:relative; left:15px;">Author:</label><input type="text" name="bookaudor" style="position:relative; left:-4px;"/></br>
+            <label style="position:relative; left:0px;">Publication:</label><input type="text" name="bookpub" style="position:relative;left: -19px;"/></br>
             <!-- <div><label>Branch:</label><input type="radio" name="branch" value="other"/>Other<input type="radio" name="branch" value="BSIT"/>BSIT<div style="margin-left:80px"><input type="radio" name="branch" value="BSCS"/>BSCS<input type="radio" name="branch" value="BSSE"/>BSSE</div>
             </div>    -->
             <!-- <label>Price:</label><input  type="number" name="bookprice"/></br> -->
-            <label>Quantity:</label><input type="number" name="bookquantity"/></br>
-            <label>Book Photo</label><input  type="file" name="bookphoto"/></br>
+            <label style="position:relative; left:10px;">Quantity:</label><input type="number" name="bookquantity" style="position:relative; left:-8px"/></br>
+            <label style="position:relative; left:0px;">Book Photo:</label><input  type="file" name="bookphoto" style="position:relative; left:-20px;"/></br>
             </br>
    
-            <input type="submit" value="SUBMIT"/>
+            <input type="submit" value="SUBMIT" style="position:relative; top:-20px; left:-50px;"/>
             </br>
             </br>
 
@@ -260,27 +263,27 @@ elseif($msg=="fail"){
 
             <div class="rightinnerdiv">   
             <div id="addperson" class="innerright portion" style="display:none">
-            <Button class="greenbtn" >ADD Person</Button>
+            <Button class="greenbtn" style="position:relative; top:0px;" >ADD PERSON</Button>
             <form action="addpersonserver_page.php" method="post" enctype="multipart/form-data">
-            <label>Name:</label><input type="text" name="addname"/>
+            <label style="position:relative; left:18px;">Name:</label><input type="text" name="addname"/>
             </br>
-            <label>Pasword:</label><input type="pasword" name="addpass"/>
+            <label style="position:relative; left:8px;">Pasword:</label><input type="pasword" name="addpass" style="position:relative; left:-10px;"/>
             </br>
-            <label>Email:</label><input  type="email" name="addemail"/></br>
-            <label for="typw">Choose type:</label>
-            <select name="type" >
+            <label style="position:relative; left:18px;">Email:</label><input  type="email" name="addemail"/></br>
+            <label for="typw" style="position:relative; left:31px;">Choose type:</label>
+            <select name="type" style="position:relative; left:30px;" >
                 <option value="student">student</option>
                 <option value="teacher">teacher</option>
             </select>
 
-            <input type="submit" value="SUBMIT"/>
+            <input type="submit" value="SUBMIT" style="position:relative; left:10px;"/>
             </form>
             </div>
             </div>
 
             <div class="rightinnerdiv">   
             <div id="studentrecord" class="innerright portion" style="display:none">
-            <Button class="greenbtn" >Student RECORD</Button>
+            <Button class="greenbtn"style="position:relative; top:0px;" >STUDENT RECORD</Button>
 
             <?php
             $u=new data;
@@ -310,7 +313,7 @@ elseif($msg=="fail"){
 
             <div class="rightinnerdiv">   
             <div id="issuebookreport" class="innerright portion" style="display:none">
-            <Button class="greenbtn" >Issue Book Record</Button>
+            <Button class="greenbtn" style="position:relative; top:0px;">ISSUE Book Record</Button>
 
             <?php
             $u=new data;
@@ -347,7 +350,7 @@ elseif($msg=="fail"){
 issue book -->
             <div class="rightinnerdiv">   
             <div id="issuebook" class="innerright portion" style="display:none">
-            <Button class="greenbtn" >ISSUE BOOK</Button>
+            <Button class="greenbtn" style="position:relative; top:0px;" >ISSUE BOOK</Button>
             <form action="issuebook_server.php" method="post" enctype="multipart/form-data">
             <label for="book">Choose Book:</label>
            
@@ -365,8 +368,8 @@ issue book -->
             ?>
             </select>
 <br>
-            <label for="Select Student">Select Student:</label>
-            <select name="userselect" >
+            <label for="Select Student" style="position:relative; left:-4px;">Select Student:</label>
+            <select name="userselect" style="position:relative; left:-4px;" >
             <?php
             $u=new data;
             $u->setconnection();
@@ -379,9 +382,9 @@ issue book -->
             ?>
             </select>
 <br>
-           <label>Days</label> <input type="number" name="days"/>
+           <label style="position:relative; left:86px;">Days:</label> <input type="number" name="days" style="position:relative; left:67px;"/>
 
-            <input type="submit" value="SUBMIT"/>
+            <input type="submit" value="SUBMIT" style="position:relative; left:50px;"/>
             </form>
             </div>
             </div>
@@ -432,7 +435,7 @@ issue book -->
 
             <div class="rightinnerdiv">   
             <div id="bookreport" class="innerright portion" style="display:none">
-            <Button class="greenbtn" >BOOK RECORD</Button>
+            <Button class="greenbtn"style="position:relative; top:0px;" >BOOK RECORD</Button>
             <?php
             $u=new data;
             $u->setconnection();
